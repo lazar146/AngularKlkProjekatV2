@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { GetProductsService } from '../../buissness-logic/api/get-products.service';
-import { Products } from '../../../models/products'; 
-import { log } from 'console';
+import { Products } from '../../../../../models/products';
+import { GetProductsService } from '../../../../../home/buissness-logic/api/get-products.service';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css'] 
+  selector: 'app-lastest-prod',
+  templateUrl: './lastest-prod.component.html',
+  styleUrl: './lastest-prod.component.css'
 })
-export class ProductsComponent implements OnInit {
+export class LastestProdComponent implements OnInit {
   products: Products[] = []; 
   latestProducts: Products[] = [];
 
@@ -29,6 +28,7 @@ export class ProductsComponent implements OnInit {
 
   addToCart(productId: number): void {
     console.log(`Product with ID ${productId} added to cart`);
-    
-  }
+     {
+
 }
+  }}

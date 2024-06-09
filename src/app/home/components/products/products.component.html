@@ -1,2 +1,84 @@
-<app-filters></app-filters>
-<p>products works!</p>
+<div class="ads-grid py-sm-5 py-4">
+  <div class="container py-xl-4 py-lg-2">
+    <!-- tittle heading -->
+    <h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+      <span>N</span>aša <span>P</span>onuda
+    </h3>
+    <!-- //tittle heading -->
+
+    <div class="row">
+      <!-- product left -->
+      <div class="agileinfo-ads-display col-lg-9">
+        <div class="wrapper">
+          <!-- first section -->
+          <div class="product-sec1 px-sm-4 px-3 py-sm-5 py-3 mb-4">
+            <div class="row">
+              <div *ngIf="products.length === 0" class="col-md-12 text-center">
+                <h3 class="tittle-w3l text-center">
+                  <span>N</span>ema <span>P</span>roizvoda
+                </h3>
+              </div>
+              <div
+                *ngFor="let product of products"
+                class="col-md-4 product-men mt-md-0 mt-5 mb-4"
+              >
+                <div class="men-pro-item simpleCart_shelfItem">
+                  <div class="men-thumb-item text-center">
+                    <div class="product-images">
+                      <img
+                        [src]="
+                          'assets/images/' +
+                          product.name +
+                          '/' +
+                          product.date_of_delivery +
+                          '/' +
+                          product.images.image_names[0] +
+                          '.jpg'
+                        "
+                        alt=""
+                        [ngStyle]="{ 'max-width': '100%', height: 'auto' }"
+                      />
+                    </div>
+                    <div class="men-cart-pro">
+                      <div class="inner-men-cart-pro">
+                        <a
+                          [routerLink]="['/productsSingle', product.id]"
+                          class="link-product-add-cart"
+                          >Saznaj Više!</a
+                        >
+                      </div>
+                    </div>
+                    <div class="item-info-product text-center border-top mt-4">
+                      <h4 class="pt-1">
+                        <strong>{{ product.name }}</strong>
+                      </h4>
+                      <div class="info-product-price my-2">
+                        <span class="item_price">${{ product.price }}</span>
+                        <del *ngIf="product.old_price !== 0"
+                          >${{ product.old_price }}</del
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pagination-container">
+                <!-- Pagination here -->
+              </div>
+            </div>
+            <!-- //first section -->
+          </div>
+        </div>
+        <!-- //product left -->
+      </div>
+
+      <!-- product right -->
+      <div class="col-lg-3 mt-lg-0 mt-4 p-lg-0">
+        <div class="side-bar p-sm-4 p-3">
+          <app-filters></app-filters>
+        </div>
+      </div>
+      <!-- //product right -->
+    </div>
+  </div>
+</div>

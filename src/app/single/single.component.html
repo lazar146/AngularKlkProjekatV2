@@ -1,0 +1,62 @@
+<div
+  class="container product-container mt-5"
+  *ngIf="product$ | async as product"
+>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="product-img text-center mb-3">
+        <img
+          [src]="
+            '../assets/images/' +
+            product.name +
+            '/' +
+            product.date_of_delivery +
+            '/' +
+            product.images.image_names[0] +
+            '.jpg'
+          "
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+
+      <div class="pro-img-list d-flex justify-content-center">
+        <a *ngFor="let img of product.images.image_names" href="#" class="mx-1">
+          <img class="thumbnail-img img-fluid" [src]="img" alt="" />
+        </a>
+      </div>
+    </div>
+    <div class="col-md-6 product-details text-center">
+      <h2>{{ product.name }}</h2>
+
+      <p class="product-description">{{ product.description }}</p>
+      <div class="mt-4 mb-4">
+        <div class="product-meta mb-3">
+          <h5>
+            <strong>Date of Delivery:</strong> {{ product.date_of_delivery }}
+          </h5>
+        </div>
+        <div class="product-price mb-3">
+          <h5><strong>Price:</strong> ${{ product.price }}</h5>
+          <h5 *ngIf="product.old_price != 0">
+            <strong>Old Price:</strong>
+            <s>${{ product.old_price }}</s>
+          </h5>
+        </div>
+      </div>
+      <div
+        class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out"
+      >
+        <input
+          type="button"
+          id="addCart"
+          value="+222 11 4444"
+          class="button btn btn-primary"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!(product$ | async)" class="text-center mt-5">
+  <p>Proizvod nije pronađen.</p>
+</div>
