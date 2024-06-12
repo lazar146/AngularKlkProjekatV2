@@ -5,6 +5,7 @@ export interface Products {
     description: string;
     date_of_delivery: string; 
     brand_id: number;
+    ram_id: number,
     created_at: string; 
     updated_at: string;
     images: Images; 

@@ -15,7 +15,7 @@ export class GetProductsService {
   getProd(): Observable<Products[]> {
     return this.http.get<{ product: Products[] }>(this.jsonUrl).pipe(
       tap(data => console.log('Data from getProd():', data)),
-      map(response => response.product) // Mapiranje odgovora da dobijemo niz proizvoda
+      map(response => response.product) 
     );
   }
 

@@ -19,12 +19,6 @@
           class="img-fluid"
         />
       </div>
-
-      <div class="pro-img-list d-flex justify-content-center">
-        <a *ngFor="let img of product.images.image_names" href="#" class="mx-1">
-          <img class="thumbnail-img img-fluid" [src]="img" alt="" />
-        </a>
-      </div>
     </div>
     <div class="col-md-6 product-details text-center">
       <h2>{{ product.name }}</h2>

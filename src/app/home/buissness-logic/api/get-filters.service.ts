@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
 })
 export class GetFiltersService {
 
-  private jsonUrl1: string = "assets/JSON/models.json";
+  private jsonUrl1: string = "assets/JSON/ram.json";
   private jsonUrl2: string = "assets/JSON/brands.json";
 
 
   constructor(private http: HttpClient) { }
 
-  getModels(): Observable<any> {
+  getRam(): Observable<any> {
     return this.http.get<any>(this.jsonUrl1);
   }
   getBrands(): Observable<any> {

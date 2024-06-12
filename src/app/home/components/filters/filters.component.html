@@ -1,7 +1,4 @@
 <form>
-  <button type="submit" class="btn btn-success mb-3">Filtritaj</button>
-  <a class="btn btn-danger" [routerLink]="['/products']">Resetuj</a>
-
   <div class="search-hotel border-bottom py-2 mt-3">
     <h3 class="agileits-sear-head mb-3">Brand</h3>
     <div class="left-side py-2">
@@ -10,7 +7,7 @@
           <input
             type="checkbox"
             [value]="brand.id"
-            formControlName="selectedBrands"
+            (change)="promena($event, brand.id, 1)"
           />
           <span class="span">{{ brand.name }}</span>
         </li>
@@ -18,16 +15,17 @@
     </div>
   </div>
   <div class="search-hotel border-bottom py-2 mt-3">
-    <h3 class="agileits-sear-head mb-3">Model</h3>
+    <h3 class="agileits-sear-head mb-3">Ram</h3>
     <div class="left-side py-2">
       <ul>
-        <li *ngFor="let model of models" class="mb-2">
+        <li *ngFor="let ram of rams" class="mb-2">
           <input
             type="checkbox"
-            [value]="model.id"
-            formControlName="selectedModels"
+            (change)="promena($event, ram.id, 2)"
+            [value]="ram.id"
+            #ramCheckbox
           />
-          <span class="span">{{ model.name }}</span>
+          <span class="span">{{ ram.name }}GB</span>
         </li>
       </ul>
     </div>

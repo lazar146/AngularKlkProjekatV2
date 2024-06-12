@@ -1,0 +1,22 @@
+{
+    
+      "city": {
+        "iconClass": "fas fa-map-marker",
+        "value": "Mladenovac"
+      },
+      "street": {
+        "iconClass": "fas fa-road",
+        "value": "Beogradska"
+      },
+      "number": {
+        "iconClass": "fas fa-mobile",
+        "value": "333 222 3333"
+      },
+      "fix": {
+        "iconClass": "fas fa-phone",
+        "value": "+222 11 4444"
+      }
+    
+  }
+  
+  

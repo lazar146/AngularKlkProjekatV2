@@ -4,6 +4,7 @@ import { GetProductsService } from './buissness-logic/api/get-products.service';
 import { HomeRoutingModule } from './home-routing.module';
 import { ProductsComponent } from './components/products/products.component';
 import { FiltersComponent } from './components/filters/filters.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { FiltersComponent } from './components/filters/filters.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    ReactiveFormsModule
+
   ],
   providers: [
     GetProductsService 
