@@ -6,30 +6,20 @@
     <div class="col-md-6">
       <div class="product-img text-center mb-3">
         <img
-          [src]="
-            '../assets/images/' +
-            product.name +
-            '/' +
-            product.date_of_delivery +
-            '/' +
-            product.images.image_names[0] +
-            '.jpg'
-          "
+          [src]="'assets/images/' + product.imageName + '.jpg'"
           alt=""
-          class="img-fluid"
+          [ngStyle]="{ 'max-width': '100%', height: 'auto' }"
         />
       </div>
     </div>
     <div class="col-md-6 product-details text-center">
       <h2>{{ product.name }}</h2>
 
-      <p class="product-description">{{ product.description }}</p>
+      <p class="product-description">Description:{{ product.description }}</p>
+      <p class="product-description">Color:{{ product.Color }}</p>
+      <p class="product-description">Ram Memory:{{ product.ramMemory }}GB</p>
       <div class="mt-4 mb-4">
-        <div class="product-meta mb-3">
-          <h5>
-            <strong>Date of Delivery:</strong> {{ product.date_of_delivery }}
-          </h5>
-        </div>
+        <div class="product-meta mb-3"></div>
         <div class="product-price mb-3">
           <h5><strong>Price:</strong> ${{ product.price }}</h5>
           <h5 *ngIf="product.old_price != 0">

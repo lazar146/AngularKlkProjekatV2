@@ -1,0 +1,14 @@
+<div class="form-group">
+  <label for="name">Naziv brenda:</label>
+  <form (ngSubmit)="onSubmit()">
+    <input
+      type="text"
+      [(ngModel)]="brand.name"
+      name="name"
+      value="{{ brandData?.name }}"
+      required
+    />
+
+    <button type="submit">Update</button>
+  </form>
+</div>

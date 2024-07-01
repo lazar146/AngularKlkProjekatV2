@@ -1,0 +1,14 @@
+<div class="form-group">
+  <label for="name">Naziv boje:</label>
+  <form (ngSubmit)="onSubmit()">
+    <input
+      type="text"
+      [(ngModel)]="color.value"
+      name="name"
+      value="{{ colorData?.value }}"
+      required
+    />
+
+    <button type="submit">Update</button>
+  </form>
+</div>

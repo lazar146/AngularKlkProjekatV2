@@ -8,12 +8,12 @@ import { map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class GetProductsService {
-  private jsonUrl: string = "../assets/JSON/products.json";
+  private apiUrl: string = "http://127.0.0.1:8000/api/products";
 
   constructor(private http: HttpClient) { }
 
   getProd(): Observable<Products[]> {
-    return this.http.get<{ product: Products[] }>(this.jsonUrl).pipe(
+    return this.http.get<{ product: Products[] }>(this.apiUrl).pipe(
       tap(data => console.log('Data from getProd():', data)),
       map(response => response.product) 
     );

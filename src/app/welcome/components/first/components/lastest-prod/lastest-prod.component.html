@@ -10,15 +10,7 @@
         <div class="men-thumb-item text-center">
           <div class="product-images">
             <img
-              [src]="
-                'assets/images/' +
-                product.name +
-                '/' +
-                product.date_of_delivery +
-                '/' +
-                product.images.image_names[0] +
-                '.jpg'
-              "
+              [src]="'assets/images/' + product.imageName + '.jpg'"
               alt=""
               [ngStyle]="{ 'max-width': '100%', height: 'auto' }"
             />

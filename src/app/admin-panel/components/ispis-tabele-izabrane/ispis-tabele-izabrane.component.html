@@ -1,0 +1,41 @@
+<div class="ads-grid py-sm-5 py-4">
+  <div class="container py-xl-4 py-lg-2">
+    <div class="container">
+      <h2>Podaci iz tabele: {{ tableName | uppercase }}</h2>
+      <div *ngIf="tableData">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th *ngFor="let header of tableHeaders">{{ header }}</th>
+              <th style="text-align: center" colspan="2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let podatak of tableData">
+              <td *ngFor="let header of tableHeaders">{{ podatak[header] }}</td>
+              <td style="text-align: center">
+                <a
+                  style="text-align: center"
+                  [routerLink]="['/update']"
+                  [queryParams]="{ tableName: tableName, id: podatak.id }"
+                  class="btn btn-warning"
+                  >Update</a
+                >
+              </td>
+              <td style="text-align: center">
+                <a
+                  [routerLink]="['/showTable', podatak.id]"
+                  class="btn btn-danger"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="tableData.length === 0">
+          <p>Nema dostupnih podataka za prikaz.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

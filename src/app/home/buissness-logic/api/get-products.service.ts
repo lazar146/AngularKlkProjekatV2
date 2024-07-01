@@ -7,15 +7,15 @@ import { Products } from '../../../models/products';
   providedIn: 'root'
 })
 export class GetProductsService {
-  private jsonUrl: string = "assets/JSON/products.json";
-  
+  //private jsonUrl: string = "assets/JSON/products.json";
+  private apiUrl: string = "http://127.0.0.1:8000/api/products";
   constructor(private http: HttpClient) { }
 
   getProd(): Observable<any> {
-    return this.http.get<any>(this.jsonUrl);
+    return this.http.get<any>(this.apiUrl);
   }
   getProd2(): Observable<Products[]> {
-    return this.http.get<{ product: Products[] }>(this.jsonUrl).pipe( // Prilagođeno da se očekuje objekat sa svojstvom 'product' koji sadrži niz proizvoda
+    return this.http.get<{ product: Products[] }>(this.apiUrl).pipe( // Prilagođeno da se očekuje objekat sa svojstvom 'product' koji sadrži niz proizvoda
       map(response => response.product) // Izvlačimo niz proizvoda iz objekta
     );
   }

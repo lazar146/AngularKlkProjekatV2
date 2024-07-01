@@ -13,12 +13,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatButtonModule } from '@angular/material/button';
+import { CustomPipe } from './custom.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
     SingleComponent,
+    CustomPipe,
     
   ],
   imports: [

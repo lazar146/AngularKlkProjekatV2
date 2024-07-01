@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Tabele iz Baze</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr style="text-align: center">
+            <th scope="col">#</th>
+            <th scope="col">Naziv Tabele</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            style="text-align: center; font-size: larger"
+            *ngFor="let table of filteredTables; let i = index"
+          >
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ table.Tables_in_angular_api | uppercase }}</td>
+            <td style="text-align: center">
+              <a
+                style="width: 70%"
+                [routerLink]="['/showTable', table.Tables_in_angular_api]"
+                class="link-product-add-cart"
+              >
+                Otvori CRUD
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

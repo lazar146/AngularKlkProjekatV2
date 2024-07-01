@@ -21,7 +21,7 @@ export class FiltersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFiltersService.getRam().subscribe(ram => {
-      this.rams = ram.ram;
+      this.rams = ram.rams;
     });
     this.getFiltersService.getBrands().subscribe(brands => {
       this.brands = brands.brands;
