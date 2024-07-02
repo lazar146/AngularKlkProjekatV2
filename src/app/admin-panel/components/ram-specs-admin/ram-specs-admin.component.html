@@ -1,14 +1,46 @@
-<div class="form-group">
-  <label for="name">Vrednost ram-a:</label>
-  <form (ngSubmit)="onSubmit()">
-    <input
-      type="text"
-      [(ngModel)]="ram.name"
-      name="name"
-      value="{{ ramData?.name }}"
-      required
-    />
+<div class="page-container">
+  <div class="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <button
+            *ngIf="!showInsertForm"
+            class="btn btn-primary mb-3"
+            (click)="toggleForm()"
+          >
+            OR INSERT
+          </button>
 
-    <button type="submit">Update</button>
-  </form>
+          <form *ngIf="!showInsertForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="name">Vrednost ram-a:</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="ram.name"
+                name="name"
+                value="{{ ramData?.name }}"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+
+          <form *ngIf="showInsertForm" (ngSubmit)="onInsert()">
+            <div class="form-group">
+              <label for="name">Vrednost ram-a:</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="ram.name"
+                name="name"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-success">INSERT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

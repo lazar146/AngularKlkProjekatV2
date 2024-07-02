@@ -8,6 +8,8 @@ import { UpdateComponentDvaComponent } from './admin-panel/components/update-com
 import { ColorsAdminComponent } from './admin-panel/components/colors-admin/colors-admin.component';
 import { RamSpecsAdminComponent } from './admin-panel/components/ram-specs-admin/ram-specs-admin.component';
 import { ImagesAdminComponent } from './admin-panel/components/images-admin/images-admin.component';
+import { ModelsAdminComponent } from './admin-panel/components/models-admin/models-admin.component';
+import { PriceAdminComponent } from './admin-panel/components/price-admin/price-admin.component';
 const routes: Routes = [
    {
   path:"",
@@ -45,6 +47,12 @@ const routes: Routes = [
   },
   { 
     path: 'images', component: ImagesAdminComponent
+  },
+  { 
+    path: 'models', component: ModelsAdminComponent
+  },
+  { 
+    path: 'price', component: PriceAdminComponent
   },
 ];
 

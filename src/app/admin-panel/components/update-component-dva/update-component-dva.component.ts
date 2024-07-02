@@ -10,6 +10,7 @@ export class UpdateComponentDvaComponent implements OnInit{
   tableName!: string;
   dataId!: number;
   data: any;
+  uloga?: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,8 +22,18 @@ export class UpdateComponentDvaComponent implements OnInit{
     this.route.queryParams.subscribe(params => {
       this.tableName = params['tableName'];
       this.dataId = +params['id'];
-      this.navigateBasedOnTable();
+      this.uloga = params['uloga'];
+
+      if(this.uloga == 'brisanje'){
+        this.proslediBrisanje();
+      }
+      else{
+        this.navigateBasedOnTable();
+      }
+      
     });
+
+    
   }
 
   
@@ -34,5 +45,21 @@ export class UpdateComponentDvaComponent implements OnInit{
     //   this.router.navigate(['/colors'], { queryParams: { id: this.dataId } });
     // }
     this.router.navigate([this.tableName], { queryParams: { id: this.dataId } });
+  }
+
+  proslediBrisanje(){
+    
+    this.getOneTableService.deleteTable(this.dataId, this.tableName).subscribe({
+      next: (response) => {
+        console.log('Brisanje uspešno:', response);
+        this.router.navigate(['/admin']);
+      },
+      error: (error) => {
+        console.error('Greška pri brisanju:', error);
+       
+
+      }
+    });
+    
   }
 }

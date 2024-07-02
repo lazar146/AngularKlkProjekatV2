@@ -19,12 +19,17 @@
                   [routerLink]="['/update']"
                   [queryParams]="{ tableName: tableName, id: podatak.id }"
                   class="btn btn-warning"
-                  >Update</a
+                  >Update&Insert</a
                 >
               </td>
               <td style="text-align: center">
                 <a
-                  [routerLink]="['/showTable', podatak.id]"
+                  [routerLink]="['/update']"
+                  [queryParams]="{
+                    tableName: tableName,
+                    id: podatak.id,
+                    uloga: 'brisanje'
+                  }"
                   class="btn btn-danger"
                   >Delete</a
                 >
